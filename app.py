@@ -11,6 +11,10 @@ from LLM import InternLM_LLM
 from langchain.prompts import PromptTemplate
 from openxlab.model import download
 
+from langchain.globals import set_verbose
+
+set_verbose(True)
+
 def load_chain():
     # 加载问答链
     # 定义 Embeddings
@@ -28,11 +32,11 @@ def load_chain():
     llm = InternLM_LLM(model_path = "/home/xlab-app-center/InternLM-chat-7b")
 
     template = """使用以下上下文来回答用户的问题。如果你不知道答案，就说你不知道。总是使用中文回答。
-    问题: {question}
     可参考的上下文：
     ···
     {context}
     ···
+    问题: {question}
     如果给定的上下文无法让你做出回答，请回答你不知道。
     有用的回答:"""
 
