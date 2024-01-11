@@ -14,7 +14,7 @@ from openxlab.model import download
 def load_chain():
     # 加载问答链
     # 定义 Embeddings
-    embeddings = HuggingFaceEmbeddings(model_name="BAAI/bge-large-zh")
+    embeddings = HuggingFaceEmbeddings(model_name="BAAI/bge-large-zh-v1.5")
 
     # 向量数据库持久化路径
     persist_directory = 'data_base/vector_db/chroma'
